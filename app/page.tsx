@@ -46,29 +46,48 @@ const companyBenefits = [
 ];
 
 const flowSteps = [
-  "ヒアリング",
-  "御社向け設計",
-  "業界向け教材の共同制作",
-  "取引先への案内開始",
-  "運用改善",
+  {
+    title: "ヒアリング",
+    description: "商流、顧客属性、既存提案との相性を整理します。",
+  },
+  {
+    title: "御社向け設計",
+    description: "案内の出し方、販売導線、提供範囲をすり合わせます。",
+  },
+  {
+    title: "業界向け教材の共同制作",
+    description: "現場で使いやすい事例に寄せて教材を整えます。",
+  },
+  {
+    title: "取引先への案内開始",
+    description: "営業資料と専用サイトを使って提案を始めます。",
+  },
+  {
+    title: "運用改善",
+    description: "反応を見ながら導入率と継続率を改善します。",
+  },
 ];
 
-const stats = ["1,300社以上", "導入設計から伴走", "マージン20〜30%"];
+const stats = [
+  { value: "1,300社以上", label: "関連サービス提供実績" },
+  { value: "導入設計から伴走", label: "企画だけでなく運用まで支援" },
+  { value: "マージン20〜30%", label: "販売時の収益イメージ" },
+];
 
 const primaryButton =
   "inline-flex items-center justify-center rounded-lg bg-[var(--navy)] px-7 py-3 text-sm font-bold text-white transition hover:bg-[var(--navy-hover)]";
 const secondaryButton =
   "inline-flex items-center justify-center rounded-lg border border-[var(--navy)] bg-white px-7 py-3 text-sm font-bold text-[var(--navy)] transition hover:bg-[rgba(26,31,75,0.04)]";
 const cardClass =
-  "rounded-xl border border-[var(--border)] bg-white shadow-[0_4px_24px_rgba(0,0,0,0.08)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_14px_34px_rgba(0,0,0,0.12)]";
+  "rounded-xl border border-[var(--border)] shadow-[0_4px_24px_rgba(0,0,0,0.08)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_14px_34px_rgba(0,0,0,0.12)]";
 const contactHref =
   "mailto:info@rootteam.co.jp?subject=Re%3AOneCoach%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87";
 
-function Logo() {
+function Logo({ light = false }: { light?: boolean }) {
   return (
     <span className="text-xl font-extrabold tracking-tight sm:text-2xl">
       <span className="text-[var(--gold)]">Re:</span>
-      <span className="text-[var(--navy)]">OneCoach</span>
+      <span className={light ? "text-white" : "text-[var(--navy)]"}>OneCoach</span>
     </span>
   );
 }
@@ -259,6 +278,9 @@ export default function Home() {
                 <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/70">
                   御社
                 </p>
+                <p className="mt-3 text-sm leading-7 text-white/76">
+                  既存の顧客接点と信頼を活かして、案内と提案を担っていただきます。
+                </p>
                 <ul className="mt-6 space-y-4 text-lg leading-8">
                   <li>業界知識</li>
                   <li>取引先との信頼</li>
@@ -275,6 +297,9 @@ export default function Home() {
               <div className={`${cardClass} bg-[var(--purple)] p-8 text-white`}>
                 <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/70">
                   ルートチーム
+                </p>
+                <p className="mt-3 text-sm leading-7 text-white/76">
+                  教材、配信基盤、更新運用をまとめて引き受け、立ち上げ負荷を抑えます。
                 </p>
                 <ul className="mt-6 space-y-4 text-lg leading-8">
                   <li>AI研修コンテンツ</li>
@@ -297,7 +322,7 @@ export default function Home() {
               導入メリット
             </h2>
             <div className="mt-12 grid gap-6 lg:grid-cols-2">
-              <div className={`${cardClass} p-8 sm:p-10`}>
+              <div className={`${cardClass} bg-white p-8 sm:p-10`}>
                 <h3 className="text-2xl font-extrabold text-[var(--navy)]">
                   取引先にとってのメリット
                 </h3>
@@ -306,7 +331,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className={`${cardClass} p-8 sm:p-10`}>
+              <div className={`${cardClass} bg-white p-8 sm:p-10`}>
                 <h3 className="text-2xl font-extrabold text-[var(--gold)]">
                   御社にとってのメリット
                 </h3>
@@ -314,6 +339,15 @@ export default function Home() {
                   <CheckList items={companyBenefits} />
                 </div>
               </div>
+            </div>
+
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <a href={contactHref} className={primaryButton}>
+                まずは無料で相談する
+              </a>
+              <a href="#pricing" className={secondaryButton}>
+                料金を見る
+              </a>
             </div>
           </div>
         </div>
@@ -327,13 +361,16 @@ export default function Home() {
             </h2>
             <div className="mt-12 flex flex-col gap-4 lg:flex-row lg:items-stretch lg:justify-between">
               {flowSteps.map((step, index) => (
-                <div key={step} className="flex flex-1 items-center gap-4 lg:min-w-0">
-                  <div className={`${cardClass} flex-1 p-6 text-center`}>
+                <div key={step.title} className="flex flex-1 items-center gap-4 lg:min-w-0">
+                  <div className={`${cardClass} bg-white flex-1 p-6 text-center`}>
                     <p className="text-sm font-extrabold tracking-[0.18em] text-[var(--gold)]">
                       STEP {index + 1}
                     </p>
                     <p className="mt-4 text-lg font-bold leading-8 text-[var(--navy)]">
-                      {step}
+                      {step.title}
+                    </p>
+                    <p className="mt-3 text-sm leading-7 text-[var(--muted-foreground)]">
+                      {step.description}
                     </p>
                   </div>
                   {index < flowSteps.length - 1 ? (
@@ -392,12 +429,13 @@ export default function Home() {
             <div className="mt-10 grid gap-4 sm:grid-cols-3">
               {stats.map((stat) => (
                 <div
-                  key={stat}
+                  key={stat.value}
                   className="rounded-2xl border border-white/12 bg-white/6 px-6 py-8 text-center backdrop-blur-sm"
                 >
                   <p className="text-3xl font-extrabold text-[var(--gold)] sm:text-4xl">
-                    {stat}
+                    {stat.value}
                   </p>
+                  <p className="mt-3 text-sm leading-7 text-white/72">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -442,7 +480,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5 py-10 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-8 border-b border-white/10 pb-8 md:flex-row md:items-center md:justify-between">
             <div>
-              <Logo />
+              <Logo light />
               <p className="mt-3 text-sm text-white/60">株式会社ルートチーム</p>
             </div>
             <div className="flex flex-col gap-4 text-sm sm:flex-row sm:items-center sm:gap-6">
