@@ -18,7 +18,7 @@ const notoSansJp = Noto_Sans_JP({
 export const metadata: Metadata = {
   title: "Re:OneCoach | 株式会社ルートチーム",
   description:
-    "取引先との信頼関係を、AI教育という新しい価値に変えるパートナーシップサービス Re:OneCoach の紹介ページです。",
+    "既存取引先へのAI研修提供を、御社ブランドで始められるパートナーサービス Re:OneCoach の紹介ページです。",
 };
 
 export default function RootLayout({
