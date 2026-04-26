@@ -11,67 +11,67 @@ import {
 } from "lucide-react";
 
 const navLinks = [
-  { href: "#about", label: "Re:OneCoachとは" },
+  { href: "#about", label: "サービス概要" },
   { href: "#business-model", label: "仕組み" },
   { href: "#pricing", label: "料金" },
   { href: "#company", label: "提供会社" },
 ];
 
 const targetCompanies = [
-  "地域や業界で、長年の取引実績と信頼関係を築いてきた",
-  "取引先からDXやAI活用について相談される機会が増えてきた",
-  "値引き以外の提案で、既存顧客との関係を深めたい",
-  "新しい収益源はほしいが、自社だけで教材開発や運営体制を持つのは重い",
+  "取引先との関係が強い",
+  "AIやDXの相談が増えている",
+  "新しい提案商材を持ちたい",
+  "自社だけで研修教材や運営体制を作るのは難しい",
 ];
 
 const aboutPoints = [
-  "0から教材を作り込む必要はありません",
-  "基本カリキュラムと配信基盤はルートチームが用意します",
-  "業界や商材に合わせた部分だけを御社と共同で設計します",
-  "御社名義で案内しやすい専用サイトを構築します",
+  "基本教材と配信基盤はルートチームが用意します",
+  "業界向けの内容は御社と一緒に調整します",
+  "御社名義の専用サイトを用意します",
+  "販売開始後の更新と運用も支援します",
 ];
 
 const partnerBenefits = [
-  "自社の現場に近い事例で学べる",
-  "付き合いのある会社から紹介されるため安心して始めやすい",
-  "助成金活用も含めて導入負担を抑えやすい",
-  "動画視聴だけで終わらず、実務への落とし込みまで支援を受けられる",
+  "現場に近い内容で学べる",
+  "付き合いのある会社から紹介されるので導入しやすい",
+  "助成金活用も含めて相談できる",
+  "学習だけでなく実務での使い方まで支援を受けられる",
 ];
 
 const companyBenefits = [
-  "既存取引先との関係が、仕入れ先から相談先へ深まる",
-  "値引き以外の提案材料が増える",
-  "継続課金による新しい収益源を持てる",
-  "本業の営業や提案活動とも自然につながる",
+  "既存顧客向けの新しい提案商材になる",
+  "販売価格の20〜30%をマージンとして確保できる",
+  "値引き以外の提案が増える",
+  "本業の営業と一緒に提案しやすい",
 ];
 
 const flowSteps = [
   {
     title: "ヒアリング",
-    description: "商流、顧客属性、既存提案との相性を整理します。",
+    description: "取引先に売りやすい形を整理します。",
   },
   {
     title: "御社向け設計",
-    description: "案内の出し方、販売導線、提供範囲をすり合わせます。",
+    description: "提供内容と販売方法を決めます。",
   },
   {
     title: "業界向け教材の共同制作",
-    description: "現場で使いやすい事例に寄せて教材を整えます。",
+    description: "必要な業界向け教材を整えます。",
   },
   {
     title: "取引先への案内開始",
-    description: "営業資料と専用サイトを使って提案を始めます。",
+    description: "専用サイトと営業資料で提案を始めます。",
   },
   {
     title: "運用改善",
-    description: "反応を見ながら導入率と継続率を改善します。",
+    description: "反応を見ながら改善します。",
   },
 ];
 
 const stats = [
   { value: "1,300社以上", label: "関連サービス提供実績" },
-  { value: "導入設計から伴走", label: "企画だけでなく運用まで支援" },
-  { value: "マージン20〜30%", label: "販売時の収益イメージ" },
+  { value: "導入設計から運用まで", label: "立ち上げから継続支援まで対応" },
+  { value: "マージン20〜30%", label: "販売時の収益目安" },
 ];
 
 const primaryButton =
@@ -215,14 +215,14 @@ export default function Home() {
           <div className="fade-section max-w-2xl">
             <div className="mb-6 inline-flex rounded-full border border-[rgba(245,166,35,0.28)] bg-white/80 px-4 py-2 text-sm font-semibold text-[var(--navy)] shadow-sm">
               <span className="text-[var(--gold)]">Re:</span>
-              <span>OneCoach 既存顧客向けAI研修パートナー制度</span>
+              <span>OneCoach パートナー制度</span>
             </div>
             <h1 className="whitespace-pre-line text-[2.5rem] leading-[1.2] font-extrabold tracking-tight text-[var(--navy)] sm:text-[3.5rem]">
-              {"長年の取引先に、\n次の一手を提案できていますか。"}
+              {"取引先向けのAI研修を、\n御社の商品にできます。"}
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-[var(--muted-foreground)]">
-              御社がすでに持つ信頼関係を活かして、
-              取引先にAI研修という新しい支援を届ける。Re:OneCoachは、そのための仕組みです。
+              ルートチームが教材と配信基盤を用意し、御社は既存取引先に提案します。
+              初期構築後は、販売価格の20〜30%が御社の収益になります。
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a href={contactHref} className={primaryButton}>
@@ -253,15 +253,22 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-5 sm:px-6 lg:px-8">
           <div className="fade-section text-center">
             <h2 className="text-3xl font-extrabold tracking-tight text-[var(--navy)] sm:text-4xl">
-              Re:OneCoachとは
+              サービス概要
             </h2>
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-9 text-[var(--muted-foreground)] sm:text-xl">
-              御社が持つ『業界知識・取引先との信頼・営業体制』と
-              ルートチームが持つ『研修設計・AI教材・配信基盤』を組み合わせ、
-              既存取引先へ御社ブランドでAI研修を提供できる仕組みです。
+              Re:OneCoachは、御社が取引先にAI研修を提供するためのパートナー制度です。
+              御社は販売と提案を担当し、ルートチームは教材、サイト、配信基盤、運用を担当します。
             </p>
             <div className="mx-auto mt-12 max-w-3xl text-left">
               <CheckList items={aboutPoints} />
+            </div>
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <a href={contactHref} className={primaryButton}>
+                無料で相談する
+              </a>
+              <a href="#pricing" className={secondaryButton}>
+                料金を見る
+              </a>
             </div>
           </div>
         </div>
@@ -271,7 +278,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="fade-section">
             <h2 className="text-center text-3xl font-extrabold tracking-tight text-[var(--navy)] sm:text-4xl">
-              役割分担はシンプルです
+              御社が売り、ルートチームが支えます
             </h2>
             <div className="mt-12 grid gap-6 lg:grid-cols-[1fr_auto_1fr] lg:items-center">
               <div className={`${cardClass} bg-[var(--navy)] p-8 text-white`}>
@@ -279,7 +286,7 @@ export default function Home() {
                   御社
                 </p>
                 <p className="mt-3 text-sm leading-7 text-white/76">
-                  既存の顧客接点と信頼を活かして、案内と提案を担っていただきます。
+                  既存取引先への案内、提案、販売を担当します。
                 </p>
                 <ul className="mt-6 space-y-4 text-lg leading-8">
                   <li>業界知識</li>
@@ -299,7 +306,7 @@ export default function Home() {
                   ルートチーム
                 </p>
                 <p className="mt-3 text-sm leading-7 text-white/76">
-                  教材、配信基盤、更新運用をまとめて引き受け、立ち上げ負荷を抑えます。
+                  教材、配信基盤、サイト構築、更新運用を担当します。
                 </p>
                 <ul className="mt-6 space-y-4 text-lg leading-8">
                   <li>AI研修コンテンツ</li>
@@ -311,6 +318,14 @@ export default function Home() {
             <p className="mt-8 text-center text-lg font-bold text-[var(--navy)] sm:text-xl">
               初期構築後は、販売価格の20〜30%を御社の収益として確保できます
             </p>
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <a href={contactHref} className={primaryButton}>
+                無料で相談する
+              </a>
+              <a href="#pricing" className={secondaryButton}>
+                料金を見る
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -343,7 +358,7 @@ export default function Home() {
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a href={contactHref} className={primaryButton}>
-                まずは無料で相談する
+                無料で相談する
               </a>
               <a href="#pricing" className={secondaryButton}>
                 料金を見る
@@ -379,6 +394,14 @@ export default function Home() {
                 </div>
               ))}
             </div>
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <a href={contactHref} className={primaryButton}>
+                無料で相談する
+              </a>
+              <a href="#pricing" className={secondaryButton}>
+                料金を見る
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -395,7 +418,7 @@ export default function Home() {
               </p>
               <p className="mt-5 text-4xl font-extrabold sm:text-5xl">300万円</p>
               <p className="mt-4 text-base leading-8 text-white/80 sm:text-lg">
-                専用サイト構築、基本教材の整備、販売開始準備を含みます
+                専用サイト構築、基本教材、販売開始準備を含みます
               </p>
             </div>
             <p className="mt-8 text-lg leading-8 text-[var(--muted-foreground)]">
@@ -406,7 +429,7 @@ export default function Home() {
               </span>
             </p>
             <p className="mt-8 text-xl font-bold text-[var(--navy)]">
-              まずは、御社の取引先にどれだけ相性があるかを無料でご相談ください。
+              まずは、御社の取引先に売れるかどうかをご相談ください。
             </p>
             <div className="mt-8">
               <a href={contactHref} className={primaryButton}>
@@ -424,7 +447,7 @@ export default function Home() {
               提供会社
             </h2>
             <p className="mt-8 max-w-4xl text-lg leading-9 text-white/82">
-              株式会社ルートチームは、自社SaaS『OneStream』の開発・運営を通じて、1,300社以上への提供実績を持つ実践企業です。Re:OneCoachでは、教材設計から配信基盤、継続運用までを担い、御社が本業を崩さず取引先支援を始められる体制を整えます。
+              株式会社ルートチームは、自社SaaS『OneStream』の開発・運営を通じて、1,300社以上への提供実績を持つ会社です。Re:OneCoachでは、教材、配信基盤、サイト構築、運用をまとめて支援します。
             </p>
             <div className="mt-10 grid gap-4 sm:grid-cols-3">
               {stats.map((stat) => (
@@ -447,10 +470,10 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-5 text-center sm:px-6 lg:px-8">
           <div className="fade-section rounded-[28px] border border-white/10 bg-white/6 px-6 py-12 shadow-[0_20px_60px_rgba(0,0,0,0.18)] backdrop-blur-sm sm:px-10">
             <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-              まずは、相性を確認する
+              まずは相談してください
             </h2>
             <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-white/78">
-              費用はかかりません。御社の取引先構成や商流をもとに、どこに導入余地があるかを一緒に整理します。
+              費用はかかりません。取引先に売れそうか、どの業界から始めるかを一緒に整理します。
             </p>
             <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap">
               <a
