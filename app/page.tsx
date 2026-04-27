@@ -75,7 +75,7 @@ const stats = [
 ];
 
 const primaryButton =
-  "inline-flex items-center justify-center rounded-lg bg-[var(--navy)] px-7 py-3 text-sm font-bold text-white transition hover:bg-[var(--navy-hover)]";
+  "inline-flex items-center justify-center rounded-lg bg-[var(--navy)] px-7 py-3 text-sm font-bold !text-white transition hover:bg-[var(--navy-hover)] hover:!text-white visited:!text-white active:!text-white";
 const secondaryButton =
   "inline-flex items-center justify-center rounded-lg border border-[var(--navy)] bg-white px-7 py-3 text-sm font-bold text-[var(--navy)] transition hover:bg-[rgba(26,31,75,0.04)]";
 const cardClass =
