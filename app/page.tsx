@@ -77,7 +77,7 @@ const stats = [
 const primaryButton =
   "inline-flex items-center justify-center rounded-lg bg-[var(--navy)] px-7 py-3 text-sm font-bold !text-white transition hover:bg-[var(--navy-hover)] hover:!text-white visited:!text-white active:!text-white";
 const secondaryButton =
-  "inline-flex items-center justify-center rounded-lg border border-[var(--navy)] bg-white px-7 py-3 text-sm font-bold text-[var(--navy)] transition hover:bg-[rgba(26,31,75,0.04)]";
+  "inline-flex items-center justify-center rounded-lg border border-[var(--navy)] bg-white px-7 py-3 text-sm font-bold !text-[var(--navy)] transition hover:bg-[rgba(26,31,75,0.04)] hover:!text-[var(--navy)] visited:!text-[var(--navy)] active:!text-[var(--navy)]";
 const cardClass =
   "rounded-xl border border-[var(--border)] shadow-[0_4px_24px_rgba(0,0,0,0.08)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_14px_34px_rgba(0,0,0,0.12)]";
 const contactHref =
@@ -478,19 +478,19 @@ export default function Home() {
             <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap">
               <a
                 href="#business-model"
-                className="inline-flex items-center justify-center rounded-lg bg-white px-7 py-3 text-sm font-bold text-[var(--navy)] transition hover:bg-white/90"
+                className="inline-flex items-center justify-center rounded-lg bg-white px-7 py-3 text-sm font-bold !text-[var(--navy)] transition hover:bg-white/90 hover:!text-[var(--navy)] visited:!text-[var(--navy)] active:!text-[var(--navy)]"
               >
                 仕組みを見る
               </a>
               <a
                 href="#pricing"
-                className="inline-flex items-center justify-center rounded-lg bg-white px-7 py-3 text-sm font-bold text-[var(--navy)] transition hover:bg-white/90"
+                className="inline-flex items-center justify-center rounded-lg bg-white px-7 py-3 text-sm font-bold !text-[var(--navy)] transition hover:bg-white/90 hover:!text-[var(--navy)] visited:!text-[var(--navy)] active:!text-[var(--navy)]"
               >
                 料金を見る
               </a>
               <a
                 href={contactHref}
-                className="inline-flex items-center justify-center rounded-lg bg-white px-7 py-3 text-sm font-bold text-[var(--navy)] transition hover:bg-white/90"
+                className="inline-flex items-center justify-center rounded-lg bg-white px-7 py-3 text-sm font-bold !text-[var(--navy)] transition hover:bg-white/90 hover:!text-[var(--navy)] visited:!text-[var(--navy)] active:!text-[var(--navy)]"
               >
                 無料で相談する
               </a>
